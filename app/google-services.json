@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "802960264618",
+    "firebase_url": "https://kidney-center-5ffff.firebaseio.com",
+    "project_id": "kidney-center-5ffff",
+    "storage_bucket": "kidney-center-5ffff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802960264618:android:1057cc5d1b1fd19f",
+        "android_client_info": {
+          "package_name": "com.samir.andrew.stmarkkidneycenter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "802960264618-730rd4dleb3qt9a5i1cbqoqn9nmqop3k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaZq88giRrFB2s4xYoB-P8PRPZfKJvCgE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
