@@ -17,4 +17,12 @@
     <string name="vascular_access_history">Vascular Access History</string>
     <string name="viral_state">Viral State</string>
     <string name="title_activity_patient">PatientActivity</string>
+    <string name="title_activity_blood_transfusion">Blood Transfusion</string>
+    <string name="title_activity_personal_data">Personal Data</string>
+    <string name="title_activity_medical_history">Medical History</string>
+    <string name="title_activity_past_diseases_history">Past Diseases History</string>
+    <string name="title_activity_previous_dialysis">Previous Dialysis</string>
+    <string name="title_activity_treatment">Treatment</string>
+    <string name="title_activity_vascular_access_history">Vascular Access History</string>
+    <string name="title_activity_viral_state">Viral State</string>
 </resources>

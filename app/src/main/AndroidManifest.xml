@@ -5,12 +5,12 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".application.application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".application.application"
         android:theme="@style/AppTheme">
         <activity android:name=".activities.SplashScreen">
             <intent-filter>
@@ -29,6 +29,70 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.samir.andrew.stmarkkidneycenter.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.BloodTransfusionActivity"
+            android:label="@string/title_activity_blood_transfusion"
+            android:parentActivityName=".activities.PatientActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.samir.andrew.stmarkkidneycenter.activities.PatientActivity" />
+        </activity>
+        <activity
+            android:name=".activities.PersonalDataActivity"
+            android:label="@string/title_activity_personal_data"
+            android:parentActivityName=".activities.PatientActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.samir.andrew.stmarkkidneycenter.activities.PatientActivity" />
+        </activity>
+        <activity
+            android:name=".activities.MedicalHistoryActivity"
+            android:label="@string/title_activity_medical_history"
+            android:parentActivityName=".activities.PatientActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.samir.andrew.stmarkkidneycenter.activities.PatientActivity" />
+        </activity>
+        <activity
+            android:name=".activities.PastDiseasesHistoryActivity"
+            android:label="@string/title_activity_past_diseases_history"
+            android:parentActivityName=".activities.PatientActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.samir.andrew.stmarkkidneycenter.activities.PatientActivity" />
+        </activity>
+        <activity
+            android:name=".activities.PreviousDialysisActivity"
+            android:label="@string/title_activity_previous_dialysis"
+            android:parentActivityName=".activities.PatientActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.samir.andrew.stmarkkidneycenter.activities.PatientActivity" />
+        </activity>
+        <activity
+            android:name=".activities.TreatmentActivity"
+            android:label="@string/title_activity_treatment"
+            android:parentActivityName=".activities.PatientActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.samir.andrew.stmarkkidneycenter.activities.PatientActivity" />
+        </activity>
+        <activity
+            android:name=".activities.VascularAccessHistoryActivity"
+            android:label="@string/title_activity_vascular_access_history"
+            android:parentActivityName=".activities.PatientActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.samir.andrew.stmarkkidneycenter.activities.PatientActivity" />
+        </activity>
+        <activity
+            android:name=".activities.ViralStateActivity"
+            android:label="@string/title_activity_viral_state"
+            android:parentActivityName=".activities.PatientActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.samir.andrew.stmarkkidneycenter.activities.PatientActivity" />
         </activity>
     </application>
 

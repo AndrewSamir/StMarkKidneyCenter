@@ -16,6 +16,7 @@
             android:id="@+id/btnMainActivityPersonalData"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="@dimen/_7sdp"
             android:layout_weight="1"
             android:lines="2"
@@ -25,6 +26,7 @@
             android:id="@+id/btnMainActivityBloodTransfusion"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="@dimen/_7sdp"
             android:layout_weight="1"
             android:lines="2"
@@ -67,6 +69,7 @@
             android:id="@+id/btnMainActivityPreviousDialysis"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="@dimen/_7sdp"
             android:layout_weight="1"
             android:lines="2"
@@ -76,6 +79,7 @@
             android:id="@+id/btnMainActivityTreatment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="@dimen/_7sdp"
             android:layout_weight="1"
             android:lines="2"
@@ -99,7 +103,7 @@
             android:text="@string/vascular_access_history" />
 
         <Button
-            android:id="@+id/btnMainActivityViralState"
+                android:id="@+id/btnMainActivityViralState"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_7sdp"
