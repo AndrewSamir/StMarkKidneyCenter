@@ -25,4 +25,11 @@
     <string name="title_activity_treatment">Treatment</string>
     <string name="title_activity_vascular_access_history">Vascular Access History</string>
     <string name="title_activity_viral_state">Viral State</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="dateOfBirth">Date of birth</string>
+    <string name="phoneNumber">Phone Number</string>
+    <string name="blood_product">Blood product</string>
+    <string name="cause_of_transfusion">Cause Of Transfusion</string>
+    <string name="complications">Complications</string>
 </resources>

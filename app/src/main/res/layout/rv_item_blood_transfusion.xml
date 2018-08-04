@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_7sdp"
     android:orientation="vertical"
-    android:padding="@dimen/_5sdp"
-    tools:context=".activities.PersonalDataActivity">
+    android:padding="@dimen/_5sdp">
+
+    <TextView
+        android:id="@+id/tvRvItemBloodTransfusionDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        android:textColor="@color/colorBlack"
+        android:textStyle="italic|bold"
+        tools:text="5-7-2004" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,23 +23,23 @@
         android:layout_marginBottom="@dimen/_5sdp"
         android:layoutDirection="ltr"
         android:orientation="horizontal"
-        android:weightSum="3">
+        android:weightSum="5">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:gravity="center_vertical"
             android:padding="@dimen/_3sdp"
-            android:text="@string/name"
+            android:text="@string/blood_product"
             android:textColor="@color/colorBlack"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tvPersonalDataName"
+            android:id="@+id/tvRvItemBloodTransfusionBloodProduct"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_weight="3"
             android:gravity="center_vertical"
             android:padding="@dimen/_3sdp"
             android:textColor="@color/colorBlack"
@@ -44,23 +53,23 @@
         android:layout_marginBottom="@dimen/_5sdp"
         android:layoutDirection="ltr"
         android:orientation="horizontal"
-        android:weightSum="3">
+        android:weightSum="5">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:gravity="center_vertical"
             android:padding="@dimen/_3sdp"
-            android:text="@string/address"
+            android:text="@string/cause_of_transfusion"
             android:textColor="@color/colorBlack"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tvPersonalDataAddress"
+            android:id="@+id/tvRvItemBloodTransfusionCauseOfTransfusion"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_weight="3"
             android:gravity="center_vertical"
             android:padding="@dimen/_3sdp"
             android:textColor="@color/colorBlack"
@@ -74,58 +83,27 @@
         android:layout_marginBottom="@dimen/_5sdp"
         android:layoutDirection="ltr"
         android:orientation="horizontal"
-        android:weightSum="3">
+        android:weightSum="5">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:gravity="center_vertical"
             android:padding="@dimen/_3sdp"
-            android:text="@string/dateOfBirth"
+            android:text="@string/complications"
             android:textColor="@color/colorBlack"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tvPersonalDataDateOfBirth"
+            android:id="@+id/tvRvItemBloodTransfusionComplications"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_weight="3"
             android:gravity="center_vertical"
             android:padding="@dimen/_3sdp"
             android:textColor="@color/colorBlack"
             android:textStyle="italic"
             tools:text="@string/name" />
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/_5sdp"
-        android:layoutDirection="ltr"
-        android:orientation="horizontal"
-        android:weightSum="3">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:padding="@dimen/_3sdp"
-            android:text="@string/phoneNumber"
-            android:textColor="@color/colorBlack"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tvPersonalDataPhoneNumber"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:gravity="center_vertical"
-            android:padding="@dimen/_3sdp"
-            android:textColor="@color/colorBlack"
-            android:textStyle="italic"
-            tools:text="@string/phoneNumber" />
-    </LinearLayout>
-
 </LinearLayout>
