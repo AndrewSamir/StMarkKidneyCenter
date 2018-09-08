@@ -1,21 +1,16 @@
 package com.samir.andrew.stmarkkidneycenter.activities;
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.method.SingleLineTransformationMethod;
-import android.view.View;
-import android.widget.GridLayout;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.samir.andrew.stmarkkidneycenter.FirebaseHandler.HandleGetDataFromFirebase;
 import com.samir.andrew.stmarkkidneycenter.R;
-import com.samir.andrew.stmarkkidneycenter.adapters.AdapterBloodTransfusion;
+import com.samir.andrew.stmarkkidneycenter.adapters.AdapterBlood;
 import com.samir.andrew.stmarkkidneycenter.interfaces.InterfaceGetDataFromFirebase;
 import com.samir.andrew.stmarkkidneycenter.models.ModelBloodTransfusion;
-import com.samir.andrew.stmarkkidneycenter.models.ModelPersonalData;
 import com.samir.andrew.stmarkkidneycenter.singleton.SingletonKidneyCenter;
 
 import java.util.ArrayList;
@@ -29,7 +24,7 @@ public class BloodTransfusionActivity extends BaseActivity implements InterfaceG
     //region fields
 
     List<ModelBloodTransfusion> modelBloodTransfusionList;
-    AdapterBloodTransfusion adapterBloodTransfusion;
+    AdapterBlood adapterBloodTransfusion;
     //endregion
 
     //region views
@@ -47,9 +42,9 @@ public class BloodTransfusionActivity extends BaseActivity implements InterfaceG
 
         ButterKnife.bind(this);
         modelBloodTransfusionList = new ArrayList<>();
-        adapterBloodTransfusion = new AdapterBloodTransfusion(modelBloodTransfusionList, this);
+        adapterBloodTransfusion = new AdapterBlood(modelBloodTransfusionList, this);
         rvBloodTransfusion.setLayoutManager(new GridLayoutManager(this, 1));
-
+rvBloodTransfusion.setAdapter(adapterBloodTransfusion);
         HandleGetDataFromFirebase.getInstance(this).setGetDataFromFirebaseInterface(this);
 
         DatabaseReference myRefData = myRef.child("patients")
@@ -65,9 +60,9 @@ public class BloodTransfusionActivity extends BaseActivity implements InterfaceG
         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
             ModelBloodTransfusion modelBloodTransfusion = snapshot.getValue(ModelBloodTransfusion.class);
             modelBloodTransfusion.setId(snapshot.getKey());
-            modelBloodTransfusionList.add(modelBloodTransfusion);
+            adapterBloodTransfusion.addItem(modelBloodTransfusion);
         }
-            adapterBloodTransfusion.addAll(modelBloodTransfusionList);
+//            adapterBloodTransfusion.addAll(modelBloodTransfusionList);
     }
 
     //endregion

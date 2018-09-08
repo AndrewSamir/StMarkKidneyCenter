@@ -6,7 +6,7 @@ import android.app.Activity;
 import android.view.View;
 
 import com.samir.andrew.stmarkkidneycenter.R;
-import com.samir.andrew.stmarkkidneycenter.models.ModelPersonalData;
+import com.samir.andrew.stmarkkidneycenter.models.PersonalData;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -14,7 +14,7 @@ import butterknife.OnClick;
 public class PatientActivity extends Activity {
 
 
-    ModelPersonalData modelPersonalData;
+    PersonalData personalData;
 
     //region life cycle
     @Override
@@ -27,7 +27,8 @@ public class PatientActivity extends Activity {
 
         Intent i = getIntent();
         Bundle bundle = i.getExtras();
-        modelPersonalData = (ModelPersonalData) bundle.getSerializable("user");
+        if (bundle != null)
+            personalData = (PersonalData) bundle.getSerializable("user");
     }
 
     //endregion
@@ -38,7 +39,7 @@ public class PatientActivity extends Activity {
     void onClickbtnMainActivityPersonalData(View view) {
         Intent yourIntent = new Intent(this, PersonalDataActivity.class);
         Bundle b = new Bundle();
-        b.putSerializable("user", modelPersonalData);
+        b.putSerializable("user", personalData);
         yourIntent.putExtras(b); //pass bundle to your intent
         startActivity(yourIntent);
     }

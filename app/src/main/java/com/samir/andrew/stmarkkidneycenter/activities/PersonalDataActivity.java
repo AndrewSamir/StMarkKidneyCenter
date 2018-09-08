@@ -2,11 +2,10 @@ package com.samir.andrew.stmarkkidneycenter.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
 import android.widget.TextView;
 
 import com.samir.andrew.stmarkkidneycenter.R;
-import com.samir.andrew.stmarkkidneycenter.models.ModelPersonalData;
+import com.samir.andrew.stmarkkidneycenter.models.PersonalData;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -15,7 +14,7 @@ public class PersonalDataActivity extends BaseActivity {
 
     //region fields
 
-    ModelPersonalData modelPersonalData;
+    PersonalData personalData;
 
     //endregion
 
@@ -46,7 +45,7 @@ public class PersonalDataActivity extends BaseActivity {
 
         Intent i = getIntent();
         Bundle bundle = i.getExtras();
-        modelPersonalData = (ModelPersonalData) bundle.getSerializable("user");
+        personalData = (PersonalData) bundle.getSerializable("user");
 
         adjustView();
     }
@@ -57,10 +56,10 @@ public class PersonalDataActivity extends BaseActivity {
 
     private void adjustView() {
 
-        tvPersonalDataName.setText(modelPersonalData.getName());
-        tvPersonalDataAddress.setText(modelPersonalData.getAddress());
-        tvPersonalDataDateOfBirth.setText(modelPersonalData.getDateOfBirth());
-        tvPersonalDataPhoneNumber.setText(modelPersonalData.getPhoneNumber());
+        tvPersonalDataName.setText(personalData.getName());
+        tvPersonalDataAddress.setText(personalData.getAddress());
+        tvPersonalDataDateOfBirth.setText(personalData.getDateOfBirth());
+        tvPersonalDataPhoneNumber.setText(personalData.getPhoneNumber());
     }
 
     //endregion

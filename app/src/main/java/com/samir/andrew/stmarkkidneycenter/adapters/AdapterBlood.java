@@ -1,8 +1,6 @@
 package com.samir.andrew.stmarkkidneycenter.adapters;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +13,7 @@ import com.samir.andrew.stmarkkidneycenter.models.ModelBloodTransfusion;
 import java.util.List;
 
 
-public class AdapterBloodTransfusion extends RecyclerView.Adapter<AdapterBloodTransfusion.MyViewHolder> {
+public class AdapterBlood extends RecyclerView.Adapter<AdapterBlood.MyViewHolder> {
 
     private List<ModelBloodTransfusion> adapterList;
     private Activity activity;
@@ -33,20 +31,30 @@ public class AdapterBloodTransfusion extends RecyclerView.Adapter<AdapterBloodTr
             tvRvItemBloodTransfusionCauseOfTransfusion = view.findViewById(R.id.tvRvItemBloodTransfusionCauseOfTransfusion);
             tvRvItemBloodTransfusionComplications = view.findViewById(R.id.tvRvItemBloodTransfusionComplications);
 
-//            tvRvItemMain.setOnClickListener(this);
+           // tvRvItemMain.setOnClickListener(this);
 
 
         }
 
         @Override
         public void onClick(View v) {
-            switch (v.getId()) {
+            /*switch (v.getId()) {
+                case R.id.tvRvItemMain:
 
-            }
+                    SingletonKidneyCenter.getInstance().setPersonId(adapterList.get(getAdapterPosition()).getId());
+//                    activity.startActivity(new Intent(activity, PatientActivity.class));
+                    Intent yourIntent = new Intent(activity, PatientActivity.class);
+                    Bundle b = new Bundle();
+                    b.putSerializable("user", adapterList.get(getAdapterPosition()));
+                    yourIntent.putExtras(b); //pass bundle to your intent
+                    activity.startActivity(yourIntent);
+
+                    break;
+            }*/
         }
     }
 
-    public AdapterBloodTransfusion(List<ModelBloodTransfusion> adapterList, Activity activity) {
+    public AdapterBlood(List<ModelBloodTransfusion> adapterList, Activity activity) {
         this.adapterList = adapterList;
         this.activity = activity;
     }
@@ -61,7 +69,9 @@ public class AdapterBloodTransfusion extends RecyclerView.Adapter<AdapterBloodTr
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
+
         ModelBloodTransfusion modelBloodTransfusion = adapterList.get(position);
+
 
         holder.tvRvItemBloodTransfusionDate.setText(modelBloodTransfusion.getDate());
         holder.tvRvItemBloodTransfusionBloodProduct.setText(modelBloodTransfusion.getBloodProduct());
@@ -99,12 +109,10 @@ public class AdapterBloodTransfusion extends RecyclerView.Adapter<AdapterBloodTr
     }
 
     public void addAll(List<ModelBloodTransfusion> items) {
-//        clearAllListData();
+        clearAllListData();
         int startIndex = adapterList.size();
         adapterList.addAll(items);
-//        notifyItemRangeInserted(startIndex, items.size());
-
-        notifyDataSetChanged();
+        notifyItemRangeInserted(startIndex, items.size());
     }
 
     public List<ModelBloodTransfusion> getAllData() {

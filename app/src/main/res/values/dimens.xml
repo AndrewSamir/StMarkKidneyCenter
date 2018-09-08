@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="marginBottom">@dimen/_15sdp</dimen>
+    <dimen name="textSize">@dimen/_12sdp</dimen>
+    <dimen name="viewHeight">@dimen/_35sdp</dimen>
+</resources>

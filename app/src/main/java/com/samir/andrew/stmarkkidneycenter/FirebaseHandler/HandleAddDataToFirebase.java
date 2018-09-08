@@ -4,10 +4,12 @@ import android.app.Dialog;
 import android.content.Context;
 
 
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.samir.andrew.stmarkkidneycenter.R;
 import com.samir.andrew.stmarkkidneycenter.interfaces.InterfaceAddDataToFirebase;
+import com.samir.andrew.stmarkkidneycenter.models.ModelPerson;
 import com.sdsmdg.tastytoast.TastyToast;
 
 import java.util.List;
@@ -37,19 +39,15 @@ public class HandleAddDataToFirebase {
     public void setClickDialogListener(InterfaceAddDataToFirebase itemClickListener) {
         this.clickListener = itemClickListener;
     }
-/*
 
-    public void callAddProfileData(final String flag, ModelProfile modelMember) {
+
+    public void callAddProfileData(final String flag, ModelPerson modelPerson) {
         final Dialog progressDialog = new ProgressDialog(context, IndicatorStyle.BallBeat).show();
         progressDialog.show();
 
-        if (HelpMe.getInstance(context).isOnline()) {
+            DatabaseReference myRefJobs = myRef.child("patients");
 
-            DatabaseReference myRefJobs = myRef.child("users")
-                    .child(FirebaseAuth.getInstance().getUid())
-                    .child("details");
-
-            myRefJobs.setValue(modelMember, new DatabaseReference.CompletionListener() {
+            myRefJobs.push().setValue(modelPerson, new DatabaseReference.CompletionListener() {
                 public void onComplete(DatabaseError error, DatabaseReference ref) {
 
                     if (error == null) {
@@ -61,13 +59,9 @@ public class HandleAddDataToFirebase {
                     progressDialog.dismiss();
                 }
             });
-        } else {
-            TastyToast.makeText(context, context.getString(R.string.connection_error), TastyToast.LENGTH_SHORT, TastyToast.ERROR);
-            progressDialog.dismiss();
         }
-
     }
-
+/*
     public void callReserveChairs(final String flag, List<ModelChair> modelChairs, List<String> chairs) {
         final Dialog progressDialog = new ProgressDialog(context, IndicatorStyle.BallBeat).show();
         progressDialog.show();
@@ -101,4 +95,4 @@ public class HandleAddDataToFirebase {
     }
 */
 
-}
+

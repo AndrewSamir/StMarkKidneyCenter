@@ -2,7 +2,7 @@ package com.samir.andrew.stmarkkidneycenter.models;
 
 import java.io.Serializable;
 
-public class ModelPersonalData implements Serializable {
+public class PersonalData implements Serializable {
 
     private String name;
     private String id;
@@ -10,7 +10,7 @@ public class ModelPersonalData implements Serializable {
     private String address;
     private String phoneNumber;
 
-    public ModelPersonalData() {
+    public PersonalData() {
     }
 
     public String getName() {

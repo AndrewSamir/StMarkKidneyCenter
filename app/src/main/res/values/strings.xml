@@ -32,4 +32,7 @@
     <string name="blood_product">Blood product</string>
     <string name="cause_of_transfusion">Cause Of Transfusion</string>
     <string name="complications">Complications</string>
+    <string name="current">Current</string>
+    <string name="previous">Previous</string>
+    <string name="title_activity_treatment_details">Current Treatment</string>
 </resources>

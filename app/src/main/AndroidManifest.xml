@@ -94,6 +94,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.samir.andrew.stmarkkidneycenter.activities.PatientActivity" />
         </activity>
+        <activity
+            android:name=".activities.TreatmentDetailsActivity"
+            android:label="@string/title_activity_treatment_details"></activity>
     </application>
 
 </manifest>

@@ -80,28 +80,24 @@ public class HandleGetDataFromFirebase {
     public void callGet(final String flag, DatabaseReference databaseReference) {
         final Dialog progressDialog = new ProgressDialog(context, IndicatorStyle.BallZigZag).show();
         progressDialog.show();
-        if (true) {
-//            DatabaseReference myRefJobs = myRef.child(context.getString(R.string.firebase_services));
-            databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    clickListener.onGetDataFromFirebase(dataSnapshot, flag);
-                    Log.d("firebase", dataSnapshot.toString());
-                    progressDialog.dismiss();
-                }
 
-                @Override
-                public void onCancelled(DatabaseError error) {
-                    Log.d("firebase error", error.toString());
+        //            DatabaseReference myRefJobs = myRef.child(context.getString(R.string.firebase_services));
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                clickListener.onGetDataFromFirebase(dataSnapshot, flag);
+                Log.d("firebase", dataSnapshot.toString());
+                progressDialog.dismiss();
+            }
 
-                    TastyToast.makeText(context, context.getString(R.string.connection_error), TastyToast.LENGTH_SHORT, TastyToast.ERROR);
-                    progressDialog.dismiss();
-                }
-            });
-        } else {
-            TastyToast.makeText(context, context.getString(R.string.connection_error), TastyToast.LENGTH_SHORT, TastyToast.ERROR);
-            progressDialog.dismiss();
-        }
+            @Override
+            public void onCancelled(DatabaseError error) {
+                Log.d("firebase error", error.toString());
+
+                TastyToast.makeText(context, context.getString(R.string.connection_error), TastyToast.LENGTH_SHORT, TastyToast.ERROR);
+                progressDialog.dismiss();
+            }
+        });
     }
 
     public void callGetAllEvents(final String flag, final String serviceID) {

@@ -1,45 +1,40 @@
 package com.samir.andrew.stmarkkidneycenter.adapters;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-
 import com.samir.andrew.stmarkkidneycenter.R;
-import com.samir.andrew.stmarkkidneycenter.activities.PatientActivity;
-import com.samir.andrew.stmarkkidneycenter.models.PersonalData;
-import com.samir.andrew.stmarkkidneycenter.singleton.SingletonKidneyCenter;
+import com.samir.andrew.stmarkkidneycenter.models.ModelMedicalHistory;
 
 import java.util.List;
 
 
-public class AdapterMain extends RecyclerView.Adapter<AdapterMain.MyViewHolder> {
+public class AdapterPastDiseasesHistory extends RecyclerView.Adapter<AdapterPastDiseasesHistory.MyViewHolder> {
 
-    private List<PersonalData> adapterList;
+    private List<String> adapterList;
     private Activity activity;
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView tvRvItemMain;
+        TextView rvItemFreeText;
 
         public MyViewHolder(View view) {
             super(view);
 
-            tvRvItemMain = view.findViewById(R.id.tvRvItemMain);
+            rvItemFreeText = view.findViewById(R.id.rvItemFreeText);
 
-            tvRvItemMain.setOnClickListener(this);
+           // tvRvItemMain.setOnClickListener(this);
 
 
         }
 
         @Override
         public void onClick(View v) {
-            switch (v.getId()) {
+            /*switch (v.getId()) {
                 case R.id.tvRvItemMain:
 
                     SingletonKidneyCenter.getInstance().setPersonId(adapterList.get(getAdapterPosition()).getId());
@@ -51,18 +46,18 @@ public class AdapterMain extends RecyclerView.Adapter<AdapterMain.MyViewHolder> 
                     activity.startActivity(yourIntent);
 
                     break;
-            }
+            }*/
         }
     }
 
-    public AdapterMain(List<PersonalData> adapterList, Activity activity) {
+    public AdapterPastDiseasesHistory(List<String> adapterList, Activity activity) {
         this.adapterList = adapterList;
         this.activity = activity;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_item_main, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_item_free_text, parent, false);
 
         return new MyViewHolder(itemView);
     }
@@ -71,10 +66,10 @@ public class AdapterMain extends RecyclerView.Adapter<AdapterMain.MyViewHolder> 
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
 
-        PersonalData personalData = adapterList.get(position);
+        String textToShow = adapterList.get(position);
 
 
-        holder.tvRvItemMain.setText(personalData.getName());
+        holder.rvItemFreeText.setText(textToShow);
     }
 
     @Override
@@ -85,12 +80,12 @@ public class AdapterMain extends RecyclerView.Adapter<AdapterMain.MyViewHolder> 
 
     //region helper methods
 
-    public void addItem(PersonalData item) {
-        insertItem(item, adapterList.size());
+    public void addItem(String item) {
+        adapterList.add(item);
         notifyDataSetChanged();
     }
 
-    public void insertItem(PersonalData item, int position) {
+    public void insertItem(String item, int position) {
         adapterList.add(position, item);
         notifyItemInserted(position);
     }
@@ -106,14 +101,14 @@ public class AdapterMain extends RecyclerView.Adapter<AdapterMain.MyViewHolder> 
         notifyItemRangeRemoved(0, size);
     }
 
-    public void addAll(List<PersonalData> items) {
+    public void addAll(List<String> items) {
         clearAllListData();
         int startIndex = adapterList.size();
         adapterList.addAll(items);
         notifyItemRangeInserted(startIndex, items.size());
     }
 
-    public List<PersonalData> getAllData() {
+    public List<String> getAllData() {
         return adapterList;
     }
 
